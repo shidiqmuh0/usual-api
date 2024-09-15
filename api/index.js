@@ -5,10 +5,8 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Allow only https://tomketloversid.github.io to access this API
-app.use(cors({
-  origin: *
-}));
+// Allow all origins to access this API
+app.use(cors());
 
 // Route to handle API request
 app.get('/api/points/:address', async (req, res) => {
