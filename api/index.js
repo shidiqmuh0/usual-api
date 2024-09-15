@@ -1,9 +1,12 @@
-// /api/index.js
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 
+// Load environment variables
+require('dotenv').config();
+
 const app = express();
+const port = 3000;
 
 // Enable CORS for your frontend
 app.use(cors());
@@ -18,10 +21,9 @@ app.get('/api/points/:address', async (req, res) => {
         "accept": "*/*",
         "accept-language": "en-US,en;q=0.9",
         "content-type": "application/json",
-        "authorization": ""
-        "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"",
+        "sec-ch-ua": "Chromium;v=128, Not A Brand;v=24, Brave;v=128",  // Remove unnecessary escaping
         "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"Windows\""
+        "sec-ch-ua-platform": "Windows"
       }
     });
 
@@ -34,5 +36,7 @@ app.get('/api/points/:address', async (req, res) => {
   }
 });
 
-// Listen on port (not needed on Vercel, handled by Vercel)
-module.exports = app;
+// Listen on port (optional, for local testing)
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
