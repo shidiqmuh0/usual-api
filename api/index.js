@@ -5,8 +5,10 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Enable CORS for your frontend
-app.use(cors());
+// Allow only https://tomketloversid.github.io to access this API
+app.use(cors({
+  origin: 'https://tomketloversid.github.io'
+}));
 
 // Route to handle API request
 app.get('/api/points/:address', async (req, res) => {
@@ -18,7 +20,7 @@ app.get('/api/points/:address', async (req, res) => {
         "accept": "*/*",
         "accept-language": "en-US,en;q=0.9",
         "content-type": "application/json",
-        "sec-ch-ua": "Chromium;v=128, Not A Brand;v=24, Brave;v=128",  // Remove unnecessary escaping
+        "sec-ch-ua": "Chromium;v=128, Not A Brand;v=24, Brave;v=128", 
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "Windows"
       }
