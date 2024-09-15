@@ -1,0 +1,12 @@
+{
+  "name": "my-express-vercel-api",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "@vercel/node": "^2.5.13"
+  }
+}
