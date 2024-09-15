@@ -18,7 +18,7 @@ app.get('/api/points/:address', async (req, res) => {
         "accept": "*/*",
         "accept-language": "en-US,en;q=0.9",
         "content-type": "application/json",
-        "authorization": process.env.AUTH_TOKEN, // Get token from environment variables
+        "authorization": ""
         "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"Windows\""
