@@ -2,9 +2,6 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 
-// Load environment variables
-require('dotenv').config();
-
 const app = express();
 const port = 3000;
 
